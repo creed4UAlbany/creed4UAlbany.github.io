@@ -19,11 +19,52 @@
         </nav>
     </header>
 
-    <main>
-        <h2>A Little About Me</h2>
-        <p>Here you can write a short biography. Talk about your hobbies, your work, or anything else you'd like to share.</p>
-        <p>For example, you could mention your passion for web development and why you started this site.</p>
-    </main>
+    <div class="about-me-container">
+        <aside class="sidebar">
+            <figure>
+                <img src="profile.jpg" alt="A profile picture of me" class="profile-pic">
+                <figcaption>Welcome to my corner of the web!</figcaption>
+            </figure>
+            <h3>Contact Info</h3>
+            <p>
+                <strong>Email:</strong> your.email@example.com <br>
+                <strong>Location:</strong> Schenectady, NY
+            </p>
+        </aside>
+
+        <main class="main-content">
+            <h2>A Little About Me</h2>
+            <p>Here you can write a short biography. Talk about your hobbies, your work, or anything else you'd like to share. I'm a passionate web developer based in New York, with a love for creating clean, intuitive, and responsive websites.</p>
+            
+            <section class="skills-section">
+                <h3>My Skills</h3>
+                <div class="skill">
+                    <p>HTML</p>
+                    <div class="skill-bar"><div class="skill-level html"></div></div>
+                </div>
+                <div class="skill">
+                    <p>CSS</p>
+                    <div class="skill-bar"><div class="skill-level css"></div></div>
+                </div>
+                <div class="skill">
+                    <p>Responsive Design</p>
+                    <div class="skill-bar"><div class="skill-level responsive"></div></div>
+                </div>
+            </section>
+
+            <section class="fun-facts-section">
+                <h3>Fun Facts</h3>
+                <details>
+                    <summary>What's my favorite coding snack? 🍿</summary>
+                    <p>Popcorn! It's light, crunchy, and doesn't make the keyboard greasy.</p>
+                </details>
+                <details>
+                    <summary>Am I a morning person or a night owl? 🦉</summary>
+                    <p>Definitely a night owl. Some of my best ideas come to me late at night.</p>
+                </details>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 Your Name</p>
