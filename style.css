@@ -1,93 +1,207 @@
-/* General Body Styles */
+/* 1. CSS Variables (Custom Properties) for easy theme management */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --card-background: #fff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-/* Centered Container */
-body > * {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header and Navigation Styles */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background: var(--card-background);
+    padding: 1rem;
     text-align: center;
-    max-width: 100%; /* Allow header to span full width */
+    box-shadow: var(--box-shadow);
 }
 
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    padding: 0;
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
+nav ul li a.active {
+    color: var(--primary-color);
     font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content Styles */
-main {
-    padding: 20px 0;
-    background: #fff;
-    min-height: 60vh; /* Ensure content area has some height */
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    color: #777;
-}
-
-/* Gallery Specific Styles */
-.gallery-container {
+/* 2. CSS Grid for a responsive two-column layout */
+.about-me-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    grid-template-columns: 1fr 3fr; /* Sidebar is 1/4, main content is 3/4 */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.gallery-container img {
+.sidebar, .main-content {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.profile-pic {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* 3. Media Query for making the layout stack on smaller screens */
+@media (max-width: 768px) {
+    .about-me-container {
+        grid-template-columns: 1fr; /* Stack the columns */
+    }
+}
+
+/* 4. Skills Section with CSS Animations */
+@keyframes fillBar {
+    from { width: 0%; }
+    to { /* Width is set in the specific class below */ }
+}
+
+.skill-bar {
+    background-color: #e9ecef;
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Important for the inner bar's border-radius */
+}
+
+.skill-level {
+    background-color: var(--primary-color);
+    height: 20px;
+    color: white;
+    text-align: right;
+    border-radius: var(--border-radius);
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+/* Set individual skill levels */
+.skill-level.html { width: 90%; }
+.skill-level.css { width: 85%; }
+.skill-level.responsive { width: 80%; }
+
+
+/* 5. Interactive Accordion using <details> and <summary> */
+.fun-facts-section details {
+    margin-bottom: 0.5rem;
     border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
 }
 
-.gallery-container figure {
-    margin: 0;
+.fun-facts-section summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none; /* Removes default dropdown arrow */
+}
+
+/* Custom dropdown arrow using pseudo-elements */
+.fun-facts-section summary::before {
+    content: '►';
+    margin-right: 0.5rem;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.fun-facts-section details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+/* Select the list within the nav */
+nav ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0;            /* Removes the default browser padding */
+    margin: 0;             /* Removes the default browser margin */
+    text-align: center;    /* Centers the navigation links */
+}
+
+/* Select each list item */
+nav ul li {
+    display: inline;       /* Changes the list items from block to inline, placing them side-by-side */
+    margin-right: 20px;    /* Adds some space between each link */
+}
+
+/* Optional: Clean up link styling */
+nav ul li a {
+    text-decoration: none; /* Removes the default underline from links */
+    color: #333;           /* Sets a default color for the links */
+}
+
+/* === HERO SECTION STYLES === */
+.hero {
+    background-image: url('images/hero-background.jpg'); /* You'll need to add an image */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
     text-align: center;
+    color: white;
 }
 
-.gallery-container figcaption {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 5px;
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Makes text readable */
+}
+
+/* === BUTTON STYLES === */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* A darker shade of the primary color */
+}
+
+/* === CONTENT GRID & CARD STYLES === */
+.content-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Space between cards */
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: var(--card-background);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    flex-basis: 300px; /* Each card will have a base width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lifts the card up on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* === RESPONSIVE STYLES === */
+@media (max-width: 768px) {
+    .content-grid {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
 }
