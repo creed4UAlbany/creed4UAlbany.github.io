@@ -52,7 +52,8 @@ header nav ul li a:hover {
 }
 
 nav ul li a.active {
-    color: var(--accent-color);
+    color: white; /* Changed from var(--accent-color) */
+    text-decoration: underline; /* Added this for visibility */
     font-weight: bold;
 }
 
@@ -290,7 +291,7 @@ nav ul li a.active {
     padding-left: 20px;
     list-style-position: outside;
     text-align: left;
-    font-size: 1.1rem; /* This is the new line */
+    font-size: 1.1rem;
 }
 
 .veg-layout-container > ul ul {
