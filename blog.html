@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="common_style.css">
+
+    <style>
+        h1 {
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,27 +23,105 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="sftrip.html">San Francisco Trip</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <article>
-            <h2>Blog Post Title 1</h2>
-            <p><em>Posted on September 28, 2025</em></p>
-            <p>This is the content of my first blog post. I'm writing about my journey into coding and using GitHub Pages to host my personal website. It's an exciting process!</p>
+    <main class="container mt-4">
+        
+        <article class="card shadow-sm mb-4 p-3">
+            <h2>Building a Deck with Family</h2>
+            <p><em>Posted on August 10, 2025</em></p>
+            <p>Earlier this month, I had a great time helping my grandfather and uncles build a new platform deck at my grandfather's house. It was a lot of hard work, but really rewarding! I pitched in by helping spread rocks for the foundation, laying out all the boards, and nailing them down.</p>
+            <p>It's amazing what we got done in just one day! A few days later, it was all finished. They added a couple of picnic tables and planted some lovely boxwood shrubs in front. It looks fantastic and was so much fun to build together.</p>
+            <div class="image-gallery">
+                <img src="grandfatherDeck.jpg" alt="The platform deck showing the work we did in one day.">
+                <img src="grandfatherDeckDone.jpeg" alt="The finished deck with picnic tables and boxwood shrubs.">
+            </div>
         </article>
-        <hr>
-        <article>
-            <h2>Blog Post Title 2</h2>
-            <p><em>Posted on September 27, 2025</em></p>
-            <p>This is another blog post. Here I can talk about a different topic, like my favorite books or a recent project I completed.</p>
+        
+        <article class="card shadow-sm mb-4 p-3">
+            <h2>First Time Processing Beeswax</h2>
+            <p><em>Posted on August 3, 2025</em></p>
+            <p>My husband and I keep bees, and even though neither of us actually like honey, we really enjoy the hobby and appreciate everything the bees do for our gardens! Besides all the honey, we end up with a lot of honey-filled wax cappings from the harvest. We have a bunch of them around the house, so I attempted collecting and cleaning the wax for the first time.</p>
+            <p>I gathered all the cappings I could find and boiled them in a pot of water, all wrapped up inside a large cheesecloth. As it boils, the pure wax melts and leaves through the pores of the cloth. All the "slumgum"—which is the term for the leftover bits of honey, propolis, and old bee cocoons—stays trapped inside the cheesecloth.</p>
+            <p>After boiling, I just let the pot cool down. The clean wax floats to the top and hardens into a solid brick. Here’s a look at the melted wax floating in the pot, and the final, beautiful block of twice-cleaned solid wax!</p>
+            <div class="image-gallery">
+                <img src="waxMelted.jpg" alt="Melted beeswax floating in the pot.">
+                <img src="waxSolid.jpg" alt="The final solid block of twice-cleaned beeswax.">
+            </div>
+        </article>
+        
+        <article class="card shadow-sm mb-4 p-3">
+            <h2>My 2025 Gardening Adventures!</h2>
+            <p><em>Posted on July 15, 2025</em></p>
+            <p>This year has been a fantastic journey for my gardens! I maintain several different spaces around my home, each with its own charm and purpose.</p>
+            
+            <h3>Front Porch Delights</h3>
+            <p>On and in front of my front porch, I've cultivated a vibrant display. This year, I focused on growing beautiful morning glories, training them up strings to create a lush, living curtain that covers the whole porch. It's truly magical to sit out there in the mornings!</p>
+            <div class="image-gallery">
+                <img src="frontYardGardens.jpg" alt="A view of the gardens on and in front of the front porch.">
+                <img src="morningGlories.jpg" alt="Close-up of morning glories climbing strings on the front porch.">
+            </div>
+
+            <h3>Bountiful Vegetable Patch</h3>
+            <p>My vegetable garden has also been thriving! I've had great success with several plants. There's nothing quite like harvesting your own fresh produce for dinner. My main crops were:</p>
+            
+            <div class="veg-layout-container">
+                <ul>
+                    <li>Vegetables
+                        <ul>
+                            <li>Zucchini</li>
+                            <li>Cucumbers</li>
+                            <li>Tomatoes</li>
+                            <li>Peas</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="image-gallery">
+                    <img src="vegetableGarden.jpg" alt="The flourishing vegetable garden with zucchini, cucumber, tomatoes, and peas.">
+                </div>
+            </div>
+
+            <h3>Reclaiming the Property Line Garden</h3>
+            <p>One of my most significant projects this year was tackling the old garden along the property line. It was quite overgrown, but I put in considerable effort to clear it out. I meticulously dug up all the weeds and unwanted plants, and then spent hours sifting through the dirt to remove stubborn roots. It was hard work, but so rewarding!</p>
+            <div class="image-gallery">
+                <img src="fenceLineCleared.jpg" alt="The cleared property line garden, showing the bare earth after weeding.">
+            </div>
+            <p>After all that clearing, I carefully replanted the plants I wanted to save, including my beloved wild roses, which always smell absolutely amazing. To give the new additions the best start, I laid down a thick layer of mulch to provide natural fertilizer and keep weeds at bay. I then introduced a couple of gorgeous smoke bushes and vibrant butterfly bushes, which I adore. I'm excited to see them mature and attract even more pollinators!</p>
+            <div class="image-gallery">
+                <img src="fenceLineGarden.jpg" alt="The property line garden after replanting wild roses, smoke bushes, and butterfly bushes, with mulch laid down.">
+            </div>
+        </article>
+        
+        <article class="card shadow-sm mb-4 p-3">
+            <h2>A Night at the Theatre: Pirates! The Penzance Musical</h2>
+            <p><em>Posted on June 21, 2025</em></p>
+            <p>What an incredible night! On the 20th, my husband and I went to see "Pirates! The Penzance Musical" at the Roundabout Theatre, and it was absolutely hilarious and so well done.</p>
+            <p>The show was fantastic, but the night got even better! We waited outside the venue afterwards and got to meet Jynkx Monsoon and David Hyde Pierce! They were both so kind, and we managed to get selfies with them. Such an amazing and memorable experience!</p>
+            <div class="image-gallery piratesGallery">
+                <img src="piratesPoster.jpg" alt="A poster for the Pirates! The Penzance Musical.">
+                <img src="jynkx.jpg" alt="A selfie with Jynkx Monsoon.">
+                <img src="davidHydePierce.jpg" alt="A selfie with David Hyde Pierce.">
+            </div>
+        </article>
+        
+        <article class="card shadow-sm mb-4 p-3">
+            <h2>Our Wedding Day</h2>
+            <p><em>Posted on January 11, 2025</em></p>
+            <p>I'm so excited to share that my husband Tom and I got married on January 10th of this year! We had a beautiful ceremony at the Schenectady Town Hall. It was a small and intimate affair, with our friend Becca officiating and my parents as our witnesses. It was the perfect day.</p>
+            
+            <div class="image-gallery">
+                <img src="wedding.jpg" alt="Tom and I standing before Becca as she officiated our wedding.">
+                <img src="parents.jpg" alt="A picture of Tom, myself, and my mom and dad.">
+            </div>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2025 Your Name</p>
+        <p>&copy; 2025 Chris Reed</p>
     </footer>
 </body>
 </html>
